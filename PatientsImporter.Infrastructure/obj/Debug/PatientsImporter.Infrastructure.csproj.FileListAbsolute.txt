@@ -1,0 +1,13 @@
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\PatientsImporter.Infrastructure.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\PatientsImporter.Infrastructure.pdb
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\FluentValidation.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\PatientsImporter.Core.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\PatientsImporter.Core.pdb
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\FluentValidation.xml
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\obj\Debug\PatientsImporter.Infrastructure.csprojResolveAssemblyReference.cache
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\obj\Debug\PatientsImporter.Infrastructure.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\obj\Debug\PatientsImporter.Infrastructure.pdb
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\Autofac.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\AutoMapper.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\Autofac.xml
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Infrastructure\bin\Debug\AutoMapper.xml

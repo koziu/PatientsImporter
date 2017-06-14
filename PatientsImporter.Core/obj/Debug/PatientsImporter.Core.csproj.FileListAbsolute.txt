@@ -1,0 +1,5 @@
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\bin\Debug\PatientsImporter.Core.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\bin\Debug\PatientsImporter.Core.pdb
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.csprojResolveAssemblyReference.cache
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.dll
+c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.pdb
