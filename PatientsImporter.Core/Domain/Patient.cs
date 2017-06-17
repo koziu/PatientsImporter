@@ -4,14 +4,14 @@
   {
     public string Name { get; protected set; }
     public string Surname { get; protected set; }
-    public string TaxId { get; protected set; }
+    public string Pesel { get; protected set; }
     public string Email { get; protected set; }
 
-    public Patient(string name, string surname, string taxId, string email)
+    public Patient(string name, string surname, string pesel, string email)
     {
       SetName(name);
       SetSurname(surname);
-      SetTaxId(taxId);
+      SetPesel(pesel);
       SetEmail(email);
     }
 
@@ -20,9 +20,9 @@
       Email = email;
     }
 
-    public void SetTaxId(string taxId)
+    public void SetPesel(string pesel)
     {
-      TaxId = taxId;
+      Pesel = pesel;
     }
 
     public void SetName(string name)

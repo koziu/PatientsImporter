@@ -3,3 +3,8 @@ c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\Patient
 c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.csprojResolveAssemblyReference.cache
 c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.dll
 c:\users\mateusz.kozak.ki-centrala\documents\visual studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.pdb
+C:\Users\mateusz.kozak\Documents\Visual Studio 2015\Projects\PatientsImporter\PatientsImporter.Core\bin\Debug\PatientsImporter.Core.dll
+C:\Users\mateusz.kozak\Documents\Visual Studio 2015\Projects\PatientsImporter\PatientsImporter.Core\bin\Debug\PatientsImporter.Core.pdb
+C:\Users\mateusz.kozak\Documents\Visual Studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.csprojResolveAssemblyReference.cache
+C:\Users\mateusz.kozak\Documents\Visual Studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.dll
+C:\Users\mateusz.kozak\Documents\Visual Studio 2015\Projects\PatientsImporter\PatientsImporter.Core\obj\Debug\PatientsImporter.Core.pdb

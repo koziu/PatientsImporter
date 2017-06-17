@@ -1,24 +1,52 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
-using PatientsImporter.Infrastructure.Commands;
-using PatientsImporter.Infrastructure.Commands.Patient;
+using PatientsImporter.Conventers;
 using PatientsImporter.Infrastructure.Dto;
+using PatientsImporter.Infrastructure.Services;
+using PatientsImporter.Models.Patients;
 
 namespace PatientsImporter.Controllers
 {
-  public class PatientController : ControllerBase
+  public class PatientController : Controller
   {
-    public PatientController(ICommandDispatcher commandDispatcher) : base(commandDispatcher)
+    private readonly IPatientService _patientService;
+    private readonly IUploadService _uploadService;
+    private readonly IConventer<IEnumerable<PatientDto>, IEnumerable<PatientViewModel>> _patientsConventer;
+    
+
+
+    public PatientController(IPatientService patientService, IUploadService uploadService, IConventer<IEnumerable<PatientDto>, IEnumerable<PatientViewModel>> patientsConventer)
     {
+      _patientService = patientService;
+      _uploadService = uploadService;
+      _patientsConventer = patientsConventer;
     }
 
-    [HttpGet]
-    public async Task<ActionResult> CreatePatient(CreatePatients command)
+    public async Task<ActionResult> Index()
     {
-      await CommandDispatcher.DispatchAsync(command);
+      var patientsDto = await _patientService.GetAllAsync();
+      var patientDto = patientsDto as IList<PatientDto> ?? patientsDto.ToList();
+      if (patientDto.Any())
+      {
+        var patientsViewModels = _patientsConventer.Convert(patientDto);
+        return View(patientsViewModels);
+      }
 
       return View();
+    }
+
+    [HttpPost]
+    public async Task<ActionResult> Upload(HttpPostedFileBase file)
+    {
+      if (ModelState.IsValid)
+      {
+        var result = await _uploadService.UploadPatientsAsync(file);
+      }
+
+      return RedirectToAction("Index");
     }
   }
 }

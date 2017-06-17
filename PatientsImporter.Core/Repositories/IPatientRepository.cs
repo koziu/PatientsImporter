@@ -9,8 +9,5 @@ namespace PatientsImporter.Core.Repositories
     Task<IEnumerable<Patient>> GetAllAsync();
     Task<Patient> GetAsync(string pesel);
     Task AddAsync(Patient patient);
-    Task UpdateAsync(Patient patient);
-    Task RemoveAsync(string pesel);
-
   }
 }

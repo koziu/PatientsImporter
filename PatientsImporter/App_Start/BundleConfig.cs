@@ -14,6 +14,11 @@ namespace PatientsImporter
       bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                   "~/Scripts/jquery.validate*"));
 
+      bundles.Add(new ScriptBundle("~/bundles/jquery.dataTables").Include(
+            "~/Scripts/jquery.dataTables.min.js",
+            "~/Scripts/Patients/patient.dataTables.js"
+            ));
+      
       // Use the development version of Modernizr to develop with and learn from. Then, when you're
       // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
       bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
@@ -24,8 +29,13 @@ namespace PatientsImporter
                 "~/Scripts/respond.js"));
 
       bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/bootstrap.css",
+                "~/Content/bootstrap.min.css",
                 "~/Content/site.css"));
+
+      bundles.Add(new StyleBundle("~/Content/Datatables").Include(
+                "~/Content/Datatables/dataTables.bootstrap.min.css",
+                "~/Content/Datatables/jquery.dataTables.min.css"
+                ));
     }
   }
 }

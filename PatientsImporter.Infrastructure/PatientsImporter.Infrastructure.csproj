@@ -38,12 +38,30 @@
       <HintPath>..\packages\AutoMapper.5.1.1\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="CsvHelper, Version=2.0.0.0, Culture=neutral, PublicKeyToken=8c4959082be5c823, processorArchitecture=MSIL">
+      <HintPath>..\packages\CsvHelper.2.16.3.0\lib\net45\CsvHelper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FluentValidation, Version=7.0.0.0, Culture=neutral, PublicKeyToken=7de548da2fbae0f0, processorArchitecture=MSIL">
       <HintPath>..\packages\FluentValidation.7.0.3\lib\net45\FluentValidation.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,20 +70,43 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Commands\CommandDispatcher.cs" />
-    <Compile Include="Commands\ICommandHandler.cs" />
-    <Compile Include="Commands\ICommand.cs" />
-    <Compile Include="Commands\ICommandDispatcher.cs" />
-    <Compile Include="Commands\Patient\CreatePatients.cs" />
     <Compile Include="Const\Regexs.cs" />
     <Compile Include="Const\ValidationMessages.cs" />
+    <Compile Include="CsvClassMap\PatientCsvClassMap.cs" />
+    <Compile Include="DBContext\PatientnsImporterContext.cs" />
     <Compile Include="Dto\PatientDto.cs" />
     <Compile Include="ExtensionMethods\ValidatorExtensionMethods.cs" />
-    <Compile Include="Handlers\Patients\CreatePatientsHandler.cs" />
+    <Compile Include="IoC\ContainerModule.cs" />
+    <Compile Include="IoC\Modules\LoggingModule.cs" />
+    <Compile Include="IoC\Modules\RepositoryModule.cs" />
+    <Compile Include="IoC\Modules\ServiceModule.cs" />
+    <Compile Include="IoC\Modules\ValidationModule.cs" />
+    <Compile Include="Mappers\AutoMapperConfig.cs" />
+    <Compile Include="Migrations\201706150049122_CreatePatientEntity.cs" />
+    <Compile Include="Migrations\201706150049122_CreatePatientEntity.Designer.cs">
+      <DependentUpon>201706150049122_CreatePatientEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706150051554_RenamedPatientEntity.cs" />
+    <Compile Include="Migrations\201706150051554_RenamedPatientEntity.Designer.cs">
+      <DependentUpon>201706150051554_RenamedPatientEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201706151846352_renamed-column-pesel.cs" />
+    <Compile Include="Migrations\201706151846352_renamed-column-pesel.Designer.cs">
+      <DependentUpon>201706151846352_renamed-column-pesel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="DbModels\PatientModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\InMsDbPatientRepository.cs" />
+    <Compile Include="Services\CsvFileService.cs" />
+    <Compile Include="Services\ICsvFileService.cs" />
     <Compile Include="Services\IPatientService.cs" />
-    <Compile Include="Services\ParientService.cs" />
-    <Compile Include="Validators\TaxIdValidator.cs" />
+    <Compile Include="Services\IService.cs" />
+    <Compile Include="Services\IUploadService.cs" />
+    <Compile Include="Services\PatientService.cs" />
+    <Compile Include="Services\UploadService.cs" />
+    <Compile Include="Validators\AutofacValidatorFactory.cs" />
+    <Compile Include="Validators\PatientValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PatientsImporter.Core\PatientsImporter.Core.csproj">
@@ -74,9 +115,22 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201706150049122_CreatePatientEntity.resx">
+      <DependentUpon>201706150049122_CreatePatientEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706150051554_RenamedPatientEntity.resx">
+      <DependentUpon>201706150051554_RenamedPatientEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201706151846352_renamed-column-pesel.resx">
+      <DependentUpon>201706151846352_renamed-column-pesel.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
