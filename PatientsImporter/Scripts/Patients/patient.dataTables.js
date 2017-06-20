@@ -1,31 +1,27 @@
-﻿//$(document).ready(function () {
-//	$("#patientTable").DataTable();
-//});
-
-$(document).ready(function () {
-  var tableLenght = $('#patientTable thead th').length;
-  var table = $('#patientTable').DataTable({
-    "columnDefs": [
-        {
-          "targets": [tableLenght - 1],
-          "searchable": false,
-          "orderable": false
-        }
-    ]
+﻿$(document).ready(function () {
+  $("#patientTable").DataTable({
+    "language": {
+      "processing": "Przetwarzanie...",
+      "search": "Szukaj:",
+      "lengthMenu": "Pokaż _MENU_ pozycji",
+      "info": "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+      "infoEmpty": "Pozycji 0 z 0 dostępnych",
+      "infoFiltered": "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+      "infoPostFix": "",
+      "loadingRecords": "Wczytywanie...",
+      "zeroRecords": "Nie znaleziono pasujących pozycji",
+      "emptyTable": "Brak danych",
+      "paginate": {
+        "first": "Pierwsza",
+        "previous": "Poprzednia",
+        "next": "Następna",
+        "last": "Ostatnia"
+      },
+      "aria": {
+        "sortAscending": ": aktywuj, by posortować kolumnę rosnąco",
+        "sortDescending": ": aktywuj, by posortować kolumnę malejąco"
+      }
+    }
   });
 
-  $("#patientTable tfoot th").each(function () {
-      var title = $("#patientTable thead th").eq($(this).index()).text();
-      title = title.toLowerCase().replace(/\s+/, "");
-      $(this).html('<input type="text" placeholder=" Filtruj ' + title + '" />');
-  });
-
-  table.columns().eq(0).each(function (colIdx) {
-    $("input", table.column(colIdx).footer()).on("keyup change", function () {
-      table
-          .column(colIdx)
-          .search(this.value)
-          .draw();
-    });
-  });
-})
+});
