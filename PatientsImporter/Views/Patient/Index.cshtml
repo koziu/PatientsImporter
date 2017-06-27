@@ -30,28 +30,31 @@
         </tr>
         </thead>
         <tbody>
-        @foreach (var item in Model)
+        @if (Model != null)
         {
-          <tr>
-            <td>
-              @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.Surname)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.Pesel)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.Age)
-            </td>
-            <td>
-              @Html.DisplayFor(modelItem => item.Gender)
-            </td>
-          </tr>
+          foreach (var item in Model)
+        {
+            <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.Name)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Pesel)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Email)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Age)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+              </td>
+            </tr>
+          }
         }
         </tbody>
         <tfoot>
