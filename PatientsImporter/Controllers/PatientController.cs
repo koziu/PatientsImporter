@@ -15,8 +15,6 @@ namespace PatientsImporter.Controllers
     private readonly IPatientService _patientService;
     private readonly IUploadService _uploadService;
     private readonly IConventer<IEnumerable<PatientDto>, IEnumerable<PatientViewModel>> _patientsConventer;
-    
-
 
     public PatientController(IPatientService patientService, IUploadService uploadService, IConventer<IEnumerable<PatientDto>, IEnumerable<PatientViewModel>> patientsConventer)
     {

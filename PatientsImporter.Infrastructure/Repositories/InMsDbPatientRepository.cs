@@ -34,7 +34,7 @@ namespace PatientsImporter.Infrastructure.Repositories
 
     public async Task<Patient> GetAsync(string pesel)
     {
-      _log.InfoFormat("Pobieranie pacjenta o nipie {1}", pesel);
+      _log.InfoFormat("Pobieranie pacjenta o nipie {0}", pesel);
       var patient = _context.Patient.SingleOrDefault(x => x.Pesel == pesel);
       return await Task.FromResult(_mapper.Map<PatientModel, Patient>(patient));
     }

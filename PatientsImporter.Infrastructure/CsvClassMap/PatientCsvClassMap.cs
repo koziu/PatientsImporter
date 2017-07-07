@@ -1,5 +1,4 @@
 ﻿using CsvHelper.Configuration;
-using PatientsImporter.Infrastructure.Dto;
 
 namespace PatientsImporter.Infrastructure.CsvClassMap
 {
@@ -10,7 +9,7 @@ namespace PatientsImporter.Infrastructure.CsvClassMap
     public string Pesel { get; set; }
     public string Email { get; set; }
   }
-  
+
   public sealed class PatientCsvClassMap : CsvClassMap<PatientCsv>
   {
     public PatientCsvClassMap()
@@ -20,7 +19,5 @@ namespace PatientsImporter.Infrastructure.CsvClassMap
       Map(m => m.Pesel).Name("PESEL");
       Map(m => m.Email).Name("Email");
     }
-
-    
   }
 }
