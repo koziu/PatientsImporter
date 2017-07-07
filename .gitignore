@@ -17,6 +17,8 @@
 *.userprefs
 
 # Build results
+[Ll]ogs/
+[Pp]ackages/
 [Dd]ebug/
 [Dd]ebugPublic/
 [Rr]elease/
