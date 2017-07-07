@@ -1,0 +1,73 @@
+﻿@model IEnumerable<PatientsImporter.Models.Patients.PatientViewModel>
+<div class="row">
+  @using (Html.BeginForm("Upload", "Patient", null, FormMethod.Post, new {enctype = "multipart/form-data"}))
+  {
+    <div class="col-md-4">
+      <h2>Importuj</h2>
+
+      <div class="form-group">
+        <input type="file" id="dataFile" name="file"/>
+      </div>
+
+      <div class="form-group">
+        <input type="submit" value="Wczytaj" class="btn btn-default"/>
+      </div>
+    </div>
+  }
+</div>
+<section class="content">
+  <div class="row">
+    <div class="col-xs-12">
+      <table id="patientTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+        <thead>
+        <tr>
+          <th>@Html.DisplayNameFor(x => x.Name)</th>
+          <th>@Html.DisplayNameFor(x => x.Surname)</th>
+          <th>@Html.DisplayNameFor(x => x.Pesel)</th>
+          <th>@Html.DisplayNameFor(x => x.Email)</th>
+          <th>@Html.DisplayNameFor(x => x.Age)</th>
+          <th>@Html.DisplayNameFor(x => x.Gender)</th>
+        </tr>
+        </thead>
+        <tbody>
+        @if (Model != null)
+        {
+          foreach (var item in Model)
+        {
+            <tr>
+              <td>
+                @Html.DisplayFor(modelItem => item.Name)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Surname)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Pesel)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Email)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Age)
+              </td>
+              <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+              </td>
+            </tr>
+          }
+        }
+        </tbody>
+        <tfoot>
+        <tr>
+          <th>@Html.DisplayNameFor(x => x.Name)</th>
+          <th>@Html.DisplayNameFor(x => x.Surname)</th>
+          <th>@Html.DisplayNameFor(x => x.Pesel)</th>
+          <th>@Html.DisplayNameFor(x => x.Email)</th>
+          <th>@Html.DisplayNameFor(x => x.Age)</th>
+          <th>@Html.DisplayNameFor(x => x.Gender)</th>
+        </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>

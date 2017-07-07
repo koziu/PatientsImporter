@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientsImporter.Web", "PatientsImporter\PatientsImporter.Web.csproj", "{82B958FB-BF35-4355-B15F-5C4BA10F8B6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientsImporter.Web", "PatientsImporter.Web\PatientsImporter.Web.csproj", "{82B958FB-BF35-4355-B15F-5C4BA10F8B6B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PatientsImporter.Core", "PatientsImporter.Core\PatientsImporter.Core.csproj", "{A2DE55E8-D41C-411C-943D-D0A95FA653D8}"
 EndProject
